@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="assets/css/style-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style-venta.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="panel-admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li class="active">
+                    <a href="ventas.html"><i class="fas fa-chart-line"></i> Ventas</a>
+                </li>
+                <li>
+                    <a href="empleados.html"><i class="fas fa-users"></i> Empleados</a>
+                </li>
+
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="user-info">
+                    <span id="user-name">Cargando...</span>
+                    <img src="assets/img/user.png" alt="Avatar" class="avatar">
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1>Gestión de Ventas</h1>
+                
+                <!-- Formulario para agregar/editar ventas -->
+                <div class="form-container">
+                    <h2 id="form-title">Registrar Nueva Venta</h2>
+                    <form id="venta-form">
+                        <div class="form-group">
+                            <label for="cliente">Nombre del Cliente:</label>
+                            <input type="text" id="cliente" name="cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="producto">Producto:</label>
+                            <input type="text" id="producto" name="producto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio (Q):</label>
+                            <input type="number" id="precio" name="precio" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Completada">Completada</option>
+                                <option value="Cancelada">Cancelada</option>
+                            </select>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary">Guardar Venta</button>
+                            <button type="reset" class="btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tabla de datos -->
+                <div class="tables">
+                    <div class="table-container">
+                        <h2>Registro de Ventas</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ventas-tabla">
+                                <!-- Aquí se cargarán las ventas dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script personalizado -->
+    <script type="module" src="assets/js/ventas.js"></script>
+</body>
+</html>

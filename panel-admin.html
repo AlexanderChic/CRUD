@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="assets/css/style-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="panel-admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li>
+                    <a href="ventas.html"><i class="fas fa-chart-line"></i> Ventas</a>
+                </li>
+                <li>
+                    <a href="empleados.html"><i class="fas fa-users"></i> Empleados</a>
+                </li>
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="user-info">
+                    <span id="user-name"></span>
+                    <img src="assets/img/user.png" alt="Avatar" class="avatar">
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1>Dashboard Administrador</h1>
+                
+                <!-- Resumen de datos -->
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Productos</h3>
+                                <p id="productos-count">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Ventas</h3>
+                                <p id="ventas-total">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Empleados</h3>
+                                <p id="empleados-count">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabla de datos -->
+                <div class="tables">
+                    <div class="table-container">
+                        <h2>Últimas Ventas</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ventas-tabla">
+                                <tr>
+                                    <td colspan="5" class="loading-row">Cargando datos...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Script personalizado -->
+    <script type="module" src="assets/js/panel.js"></script>
+    <script type="module" src="assets/js/ventas.js"></script>
+
+</body>
+</html>

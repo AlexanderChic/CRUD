@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador - Productos</title>
+    <link rel="stylesheet" href="assets/css/style-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style-producto.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="panel-admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="active">
+                    <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li>
+                    <a href="ventas.html"><i class="fas fa-chart-line"></i> Ventas</a>
+                </li>
+                <li>
+                    <a href="empleados.html"><i class="fas fa-users"></i> Empleados</a>
+                </li>
+
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="user-info">
+                    <span id="user-name">Cargando...</span>
+                    <img src="assets/img/user.png" alt="Avatar" class="avatar">
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1>Gestión de Productos</h1>
+                
+                <!-- Formulario para agregar/editar productos -->
+                <div class="form-container">
+                    <h2 id="form-title">Registrar Nuevo Producto</h2>
+                    <form id="producto-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre del Producto:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" name="descripcion" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoría:</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="Electrónica">Electrónica</option>
+                                <option value="Energia Renovable">Energia Renovable</option>
+                                <option value="Energia">Energia</option>
+                                <option value="Equipo de impresion">Equipo de impresion</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio (Q):</label>
+                            <input type="number" id="precio" name="precio" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stock">Stock:</label>
+                            <input type="number" id="stock" name="stock" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                                <option value="Disponible">Disponible</option>
+                                <option value="Agotado">Agotado</option>
+                                <option value="Descontinuado">Descontinuado</option>
+                            </select>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary">Guardar Producto</button>
+                            <button type="reset" class="btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tabla de datos -->
+                <div class="tables">
+                    <div class="table-container">
+                        <h2>Catálogo de Productos</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productos-tabla">
+                                <!-- Aquí se cargarán los productos dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script personalizado -->
+    <script type="module" src="assets/js/producto.js"></script>
+</body>
+</html>

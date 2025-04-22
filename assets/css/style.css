@@ -1,0 +1,100 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Contenedor del formulario */
+  .login-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  
+  /* Título del login */
+  .login-title {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  /* Logo o imagen (opcional) */
+  .login-logo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  
+  /* Grupo de formulario */
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #038992;
+    box-shadow: 0 0 0 2px rgba(3, 137, 146, 0.2);
+    outline: none;
+  }
+  
+  /* Botón de ingreso */
+  .btn-login {
+    background-color: #038992;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  
+  .btn-login:hover {
+    background-color: #026b72;
+    box-shadow: 0 4px 12px rgba(3, 137, 146, 0.3);
+  }
+  
+  .btn-login:active {
+    transform: scale(0.98);
+  }
+  
+  /* Mensaje de error (para usar si implementas validación) */
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }

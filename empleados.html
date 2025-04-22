@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="assets/css/style-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style-empleado.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="panel-admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li>
+                    <a href="ventas.html"><i class="fas fa-chart-line"></i> Ventas</a>
+                </li>
+                <li class="active">
+                    <a href="empleados.html"><i class="fas fa-users"></i> Empleados</a>
+                </li>
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="user-info">
+                    <span id="user-name">Cargando...</span>
+                    <img src="assets/img/user.png" alt="Avatar" class="avatar">
+                </div>
+            </div>
+            
+            <div class="content">
+                <h1>Dashboard Administrador</h1>
+                
+                <!-- Formulario para agregar empleados -->
+                <div class="form-container">
+                    <h2>Agregar Nuevo Empleado</h2>
+                    <form id="empleado-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="puesto">Puesto:</label>
+                            <input type="text" id="puesto" name="puesto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sueldo">Sueldo (Q):</label>
+                            <input type="number" id="sueldo" name="sueldo" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carnet">No. Carnet:</label>
+                            <input type="text" id="carnet" name="carnet" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user">User</label>
+                            <input type="text" id="user" name="user" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" name="password" required>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary">Guardar Empleado</button>
+                            <button type="reset" class="btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tabla de datos -->
+                <div class="tables">
+                    <div class="table-container">
+                        <h2>Empleados</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Correo Electronico</th>
+                                    <th>Puesto</th>
+                                    <th>Sueldo</th>
+                                    <th>No. Carnet</th>
+                                    <th>User</th>
+                                    <th>Password</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="empleados-tabla">
+                                <!-- Aquí se cargarán los empleados dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script personalizado -->
+    <script type="module" src="assets/js/empleados.js"></script>
+</body>
+</html>
